@@ -1,0 +1,32 @@
+{
+  "name": "splendor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tom Artiom Fiodorov",
+  "license": "MIT",
+  "browserify-shim": {
+  },
+  "browserify": {
+    "tranform": ["browserify-shim"]
+  },
+  "devDependencies": {
+    "gulp": "3.8.x",
+    "gulp-rename": "1.2.x",
+    "gulp-nodemon": "1.0.x",
+    "gulp-typescript": "x",
+    "require-dir": "x",
+    "browserify": "8.0.x",
+    "vinyl-source-stream": "1.0.x",
+    "watchify": "2.2.x",
+    "tsify": "x",
+    "event-stream": "x",
+    "browserify-shim": "3.8.x"
+  },
+  "dependencies": {
+    "jade": "*"
+  }
+}
