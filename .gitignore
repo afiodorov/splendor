@@ -23,6 +23,8 @@ results
 build
 
 node_modules
-DefinitelyTyped
+/release
+/ts/*.js
 lib-cov
 /public/app/bundle.js
+DefinitelyTyped/

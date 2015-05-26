@@ -27,6 +27,7 @@
     "browserify-shim": "3.8.x"
   },
   "dependencies": {
-    "jade": "*"
+    "jade": "*",
+    "express": "4.x"
   }
 }
