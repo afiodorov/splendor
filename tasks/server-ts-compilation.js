@@ -25,4 +25,5 @@ gulp.task('server-ts-compilation', function() {
 
 gulp.task('watch', ['server-ts-compilation'], function() {
   gulp.watch(tsSources, ['server-ts-compilation']);
+  console.log('recompiled!');
 });

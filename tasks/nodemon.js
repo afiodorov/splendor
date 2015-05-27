@@ -8,7 +8,8 @@ gulp.task('develop', function() {
     ignore:
       [
         'node_modules/**',
-        'public/**'
+        'public/**',
+        'ts/**'
       ],
     nodeArgs: ['--debug', '--stack-trace-limit=1000']
   })
