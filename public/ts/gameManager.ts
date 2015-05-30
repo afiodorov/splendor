@@ -10,7 +10,7 @@ class GameManager {
 		var canvas = new fabric.Canvas(elementId);
 
 		var card = new Card(1, color.Color.Green,
-			{green: 0, blue: 1, white: 0, red: 0, black: 1});
+			{green: 0, blue: 3, white: 5, red: 3, black: 3});
 		card.initGui(canvas);
 	}
 }
