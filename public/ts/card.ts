@@ -1,5 +1,4 @@
 /// <reference path="../../DefinitelyTyped/fabricjs/fabricjs.d.ts" />
-/// <reference path="./color.ts" />
 
 import color = require('./color')
 import fabricN = require('fabric');
