@@ -29,3 +29,4 @@ lib-cov
 public/app/bundle.js
 DefinitelyTyped/
 public/ts/*.js
+tsDependencies/
