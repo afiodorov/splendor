@@ -1,5 +1,7 @@
 Let's see if I can get splendor working
 
+Screenshot as of 30/05/2015
+
 ![cards drawn](scr.png)
 
 ## Installation
