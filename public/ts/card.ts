@@ -23,12 +23,14 @@ class Card {
         var outerRect = new fabric.Rect({width: 85, height: 155,
 			fill: '#D0FEFF', borderColor: '#000'});
         var pointsText = new fabric.Text(this.points.toString(), {
-        	fontSize: 30});
-        this.gui = new fabric.Group([outerRect, pointsText], {top: 100,
-			left: 100});
-        this.canvas.add(this.gui);
+        	fontSize: 30, left: 3, top: 2});
 
-        console.log(color.Shades.getValue(this.color));
+        var valueCircle = new fabric.Circle({radius: 12, left: 55, top: 6,
+        	fill: color.Shades.getValue(this.color)});
+
+        this.gui = new fabric.Group([outerRect, pointsText, valueCircle],
+			{top: 100, left: 100});
+        this.canvas.add(this.gui);
     }
 }
 
