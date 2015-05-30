@@ -16,7 +16,7 @@ npm install
 ## Running
 
 ```shell
-./gulp
+gulp
 ```
 
 Go to [http://localhost:5000/](http://localhost:5000/) to see it
