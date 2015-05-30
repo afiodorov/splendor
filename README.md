@@ -12,3 +12,11 @@ cd splendor
 npm install
 ./after-npm-install.sh
 ```
+
+## Running
+
+```shell
+./gulp
+```
+
+Go to [http://localhost:5000/](http://localhost:5000/) to see it
