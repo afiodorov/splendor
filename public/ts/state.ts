@@ -1,13 +1,10 @@
-/// <reference path="../../DefinitelyTyped/lodash/lodash.d.ts" />
-
-import _ = require('lodash');
-
 export enum CardType {I, II, III};
 
 type idType = number;
 
-type CardData = {green?: number; blue?: number; red?: number; white?: number;
-	black?: number; points: number; type: CardType};
+export type CardData = {green?: number; blue?: number; red?: number;
+	white?: number; black?: number; points: number; value: string;
+	type: CardType};
 
 type CoinData = {white?: number; blue?: number; red?: number; black?: number;
 	gold?: number; green?: number};

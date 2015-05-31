@@ -28,68 +28,80 @@ var stateJson : state.State = {
 		green: 1,
 		red: 2,
 		points: 0,
-		type: state.CardType.I
+		type: state.CardType.I,
+		value: 'green'
 	}, {
 		blue: 2,
 		green: 1,
 		red: 2,
 		points: 1,
-		type: state.CardType.I
+		type: state.CardType.I,
+		value: 'black'
 	}, {
 		white: 1,
 		red: 1,
 		black: 1,
 		points: 0,
-		type: state.CardType.II
+		type: state.CardType.I,
+		value: 'blue'
 	}, {
 		green: 3,
 		blue: 2,
 		points: 0,
-		type: state.CardType.II
+		type: state.CardType.I,
+		value: 'white'
 	}, {
 		green: 1,
 		red: 2,
 		points: 0,
-		type: state.CardType.II
+		type: state.CardType.II,
+		value: 'red'
 	}, {
 		blue: 2,
 		green: 1,
 		red: 2,
 		points: 1,
-		type: state.CardType.II
+		type: state.CardType.II,
+		value: 'green'
 	}, {
 		white: 1,
 		red: 1,
 		black: 1,
 		points: 0,
-		type: state.CardType.II
+		type: state.CardType.II,
+		value: 'blue'
 	}, {
 		green: 3,
 		blue: 2,
 		points: 0,
-		type: state.CardType.II
+		type: state.CardType.II,
+		value: 'black'
 	}, {
 		green: 1,
 		red: 2,
 		points: 0,
-		type: state.CardType.III
+		type: state.CardType.III,
+		value: 'white'
 	}, {
 		blue: 2,
 		green: 1,
 		red: 2,
 		points: 1,
-		type: state.CardType.III
+		type: state.CardType.III,
+		value: 'white'
 	}, {
 		white: 1,
 		red: 1,
 		black: 1,
 		points: 0,
-		type: state.CardType.III
+		type: state.CardType.III,
+		value: 'red'
 	}, {
 		green: 3,
 		blue: 2,
 		points: 0,
-		type: state.CardType.III
+		type: state.CardType.III,
+		value: 'blue'
 	}],
 	players: [{
 		name: "Chris",
@@ -104,12 +116,14 @@ var stateJson : state.State = {
 			green: 3,
 			blue: 2,
 			points: 1,
-			type: state.CardType.I
+			type: state.CardType.I,
+			value: 'red'
 		}, {
 			red: 2,
 			blue: 2,
 			points: 0,
-			type: state.CardType.II
+			type: state.CardType.II,
+			value: 'blue'
 		}],
 		reserved: null,
 		id: 0,
@@ -120,18 +134,20 @@ var stateJson : state.State = {
 			blue: 1,
 			red: 1,
 			gold: 0,
-			green: 1,
+			green: 1
 		},
 		cards: [{
 			green: 3,
 			blue: 2,
 			points: 1,
-			type: state.CardType.I
+			type: state.CardType.I,
+			value: 'green'
 		}, {
 			red: 2,
 			blue: 2,
 			points: 0,
-			type: state.CardType.II
+			type: state.CardType.II,
+			value: 'blue'
 		}],
 		reserved: null,
 		id: 1
@@ -143,18 +159,21 @@ var stateJson : state.State = {
 			red: 1,
 			gold: 0,
 			green: 1,
-			type: state.CardType.I
+			type: state.CardType.I,
+			value: 'white'
 		},
 		cards: [{
 			green: 3,
 			blue: 2,
 			points: 1,
-			type: state.CardType.II
+			type: state.CardType.II,
+			value: 'white'
 		}, {
 			red: 2,
 			blue: 2,
 			points: 0,
-			type: state.CardType.II
+			type: state.CardType.II,
+			value: 'black'
 		}],
 		reserved: null,
 		id: 2
@@ -168,10 +187,6 @@ class GameManager {
 
 	constructor(elementId: string) {
 		var canvas = new fabric.Canvas(elementId);
-
-		var card = new Card(1, color.Color.Green,
-			{green: 0, blue: 3, white: 5, red: 3, black: 3});
-		card.initGui(canvas);
 
 		this.stateHolder = new state.StateHolder(stateJson);
 		this.unplayedCardHolder = new UnplayedCardsHolder(this.stateHolder,
