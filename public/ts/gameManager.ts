@@ -7,6 +7,7 @@ import Card = require('./card');
 import color = require('./color');
 import state = require('./state');
 import UnplayedCardsHolder = require('./unplayedCardsHolder');
+import CoinHolder = require('./coinHolder');
 
 var stateJson : state.State = {
 	turn: 0,
@@ -184,6 +185,7 @@ export = GameManager;
 class GameManager {
 	stateHolder : state.StateHolder;
 	unplayedCardHolder : UnplayedCardsHolder;
+	coinHolder : CoinHolder;
 
 	constructor(elementId: string) {
 		var canvas = new fabric.Canvas(elementId);
@@ -192,5 +194,8 @@ class GameManager {
 		this.unplayedCardHolder = new UnplayedCardsHolder(this.stateHolder,
 			canvas);
 		this.unplayedCardHolder.draw();
+
+		this.coinHolder = new CoinHolder(this.stateHolder, canvas);
+		// this.coinHolder.draw();
 	}
 }

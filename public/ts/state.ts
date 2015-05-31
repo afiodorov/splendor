@@ -6,8 +6,8 @@ export type CardData = {green?: number; blue?: number; red?: number;
 	white?: number; black?: number; points: number; value: string;
 	type: CardType};
 
-type CoinData = {white?: number; blue?: number; red?: number; black?: number;
-	gold?: number; green?: number};
+export type CoinData = {white?: number; blue?: number; red?: number; black?:
+	number; gold?: number; green?: number};
 
 type Player = {name: string; id: idType; coins: CoinData; cards: CardData[];
 	reserved: CardData[]};

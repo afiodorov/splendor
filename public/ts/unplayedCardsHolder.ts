@@ -65,7 +65,7 @@ class UnplayedCardsHolder {
 
 		}
 
-		this.gui = new fabric.Group(allElements, {top: 20, left: 20});
+		this.gui = new fabric.Group(allElements, {top: 80, left: 20});
 		this.canvas.add(this.gui);
 	}
 };

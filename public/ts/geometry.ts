@@ -6,3 +6,6 @@ export var CARD_AREA_HEIGHT : number = 500
 
 export var CARD_WIDTH = 85;
 export var CARD_HEIGHT = 155;
+
+export var COIN_WIDTH = 45;
+export var COIN_HEIGHT = 25;
