@@ -6,6 +6,7 @@ import geometry = require('./geometry');
 import fabricN = require('fabric');
 var fabric = fabricN.fabric;
 
+var cachedSvgImage : fabric.fabric.IObject;
 var svgPromise : Promise<fabric.fabric.IObject> =
 	new Promise<fabric.fabric.IObject>((resolve, reject) => {
 		fabric.loadSVGFromURL('cylinder.svg', function(objects, options) {
@@ -13,21 +14,22 @@ var svgPromise : Promise<fabric.fabric.IObject> =
 			options.scaleX = geometry.COIN_WIDTH / options.width;
 			options.scaleY = geometry.COIN_HEIGHT / options.height;
 
-			resolve(fabric.util.groupSVGElements(objects, options));
+			cachedSvgImage = fabric.util.groupSVGElements(objects, options)
+			resolve(cachedSvgImage);
 		});
 	})
 
-var cached : fabric.fabric.IObject = null;
-
 export function make(color : colorModule.Color) : Promise<Coin> {
 
-	if (cached) {
-		return Promise.resolve<Coin>(
-			new Coin(color, fabric.util.object.clone(cached)));
+	if (cachedSvgImage) {
+		return new Promise<Coin>((resolve, reject) => {
+			cachedSvgImage.clone(function (cloned) {
+				resolve(new Coin(color, cloned));
+			});
+		});
 	}
 
 	return svgPromise.then(function(fabObj) {
-		cached = fabObj;
 		return new Coin(color, fabObj);
 	});
 };

@@ -19,6 +19,16 @@ class CoinHolder {
 		var coinPr = coin.make(color.Color.Red).then(function(coin) {
 			canvas.add(coin.gui);
 		});
+
+		var coinPr = coin.make(color.Color.Green).then(function(coin) {
+			coin.gui.setLeft(100);
+			canvas.add(coin.gui);
+		});
+
+		var coinPr = coin.make(color.Color.Black).then(function(coin) {
+			coin.gui.setLeft(200);
+			canvas.add(coin.gui);
+		});
 	}
 
 	draw() {
