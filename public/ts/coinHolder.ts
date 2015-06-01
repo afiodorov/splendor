@@ -1,4 +1,5 @@
 /// <reference path="../../DefinitelyTyped/fabricjs/fabricjs.d.ts" />
+/// <reference path="../../DefinitelyTyped/es6-promise/es6-promise.d.ts" />
 
 import fabricN = require('fabric');
 var fabric = fabricN.fabric;
@@ -6,7 +7,7 @@ var fabric = fabricN.fabric;
 import state = require('./state');
 import geometry = require('./geometry');
 import color = require('./color');
-import Coin = require('./coin');
+import coin = require('./coin');
 
 class CoinHolder {
 
@@ -15,8 +16,9 @@ class CoinHolder {
 	constructor(public stateHolder : state.StateHolder,
 		public canvas : fabric.fabric.ICanvas) {
 
-		var coin = new Coin(color.Color.Red);
-		canvas.add(coin.gui);
+		var coinPr = coin.make(color.Color.Red).then(function(coin) {
+			canvas.add(coin.gui);
+		});
 	}
 
 	draw() {
