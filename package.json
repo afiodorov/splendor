@@ -17,7 +17,7 @@
     "tranform": ["browserify-shim"]
   },
   "devDependencies": {
-    "gulp": "3.8.x",
+    "gulp": "3.9.x",
     "gulp-rename": "1.2.x",
     "gulp-nodemon": "1.0.x",
     "gulp-typescript": "x",

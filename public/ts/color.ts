@@ -6,6 +6,7 @@ export type ColorHolder = {green: number; blue: number; red: number; white: numb
     black: number}
 
 export var Shades = new collections.Dictionary<Color, string>();
+
 Shades.setValue(Color.Green, 'green');
 Shades.setValue(Color.Blue, 'blue');
 Shades.setValue(Color.Red, 'red');

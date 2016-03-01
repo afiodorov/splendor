@@ -16,12 +16,10 @@ bld/
 tags
 .screenrc
 public/app/bundle.js
-
 pids
 logs
 results
 build
-
 node_modules
 /release
 /ts/*.js

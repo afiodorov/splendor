@@ -1,4 +1,8 @@
 /// <reference path="../../DefinitelyTyped/fabricjs/fabricjs.d.ts" />
+/// <reference path="./card.ts" />
+/// <reference path="./color.ts" />
+/// <reference path="./unplayedCardsHolder.ts" />
+/// <reference path="./coinHolder.ts" />
 
 import fabricN = require('fabric');
 var fabric = fabricN.fabric;
@@ -196,6 +200,6 @@ class GameManager {
 		this.unplayedCardHolder.draw();
 
 		this.coinHolder = new CoinHolder(this.stateHolder, canvas);
-		// this.coinHolder.draw();
+		this.coinHolder.draw();
 	}
 }

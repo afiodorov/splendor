@@ -6,6 +6,7 @@ import fabricN = require('fabric');
 import geometry = require('./geometry');
 import collections = require('../../tsDependencies/typescript-collections');
 
+
 var fabric = fabricN.fabric;
 
 class Card {

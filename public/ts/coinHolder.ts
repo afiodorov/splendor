@@ -4,6 +4,7 @@
 import fabricN = require('fabric');
 var fabric = fabricN.fabric;
 
+import colorModule = require('./color');
 import state = require('./state');
 import geometry = require('./geometry');
 import color = require('./color');
@@ -11,27 +12,25 @@ import coin = require('./coin');
 
 class CoinHolder {
 
-    gui: fabric.fabric.IObject;
+    gui: fabric.fabric.IGroup;
 
 	constructor(public stateHolder : state.StateHolder,
 		public canvas : fabric.fabric.ICanvas) {
-
-		var coinPr = coin.make(color.Color.Red).then(function(coin) {
-			canvas.add(coin.gui);
-		});
-
-		var coinPr = coin.make(color.Color.Green).then(function(coin) {
-			coin.gui.setLeft(100);
-			canvas.add(coin.gui);
-		});
-
-		var coinPr = coin.make(color.Color.Black).then(function(coin) {
-			coin.gui.setLeft(200);
-			canvas.add(coin.gui);
-		});
 	}
 
 	draw() {
+	    var coins : fabric.fabric.IObject[] = [];
+	    var left = 30;
+	    colorModule.Shades.forEach(function(key, value) {
+	        var coinInstance = new coin.Coin(key);
+
+	        coinInstance.gui.setLeft(left);
+	        left += 70;
+	        coins.push(coinInstance.gui);
+        });
+
+        this.gui = new fabric.Group(coins);
+        this.canvas.add(this.gui);
 	}
 }
 
